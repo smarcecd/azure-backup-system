@@ -167,6 +167,8 @@ az role assignment create `
 
 Replace `<your-user-id>` with the ID from the previous step, `<your-subscription-id>` with your subscription ID, and `yourname` in the resource group and storage account names with your own value.
 
+ ⚠️ Once this role is applied, Azure may take 30–60 seconds to propagate. ⚠️
+
 #### 6.2 — Create and Upload a Test File
 
 Change `YourStorageAccountName` and paste into PowerShell:
