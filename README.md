@@ -220,6 +220,7 @@ Portal → Resource Groups → `rg-backup-[yourname]`
 <img width="719" height="335" alt="Screenshot 2026-09-28 134801" src="https://github.com/user-attachments/assets/2a79a049-317b-47dc-b60f-83c68d681372" />
 
 
+
 **✔ Storage Account and Versioning**
 
 Home → Storage accounts → `stbackupyourname` → Overview → Properties tab
@@ -233,6 +234,7 @@ Home → Storage accounts → `stbackupyourname` → Overview → Properties tab
 | Versioning | Enabled | Every file version is kept for recovery |
 | Blob soft delete | Enabled (30 days) | Deleted files are recoverable for 30 days |
 | Minimum TLS version | Version 1.2 | Secure connections enforced |
+
 
 
 **✔ Lifecycle Policy**
@@ -252,6 +254,7 @@ You should see the `backup-lifecycle` rule configured with:
  <img width="472" height="356" alt="image" src="https://github.com/user-attachments/assets/030b4f53-573e-43bd-b97f-baf9f8783f86" />
 
 
+
 **✔ Storage Containers**
 
 Home → Storage accounts → `stbackupyourname` → Data storage → Containers
@@ -260,6 +263,8 @@ Home → Storage accounts → `stbackupyourname` → Data storage → Containers
 
 
 You should see four containers: `$logs` (auto-created by Azure for diagnostics), `application-files`, `database-exports`, and `documents`, all with **Private** access.
+
+
 
 **✔ Logic App is live**
 
@@ -274,7 +279,7 @@ Home → Logic Apps → Status: **Enabled**
 - Test email received in your inbox
 
 <img width="676" height="367" alt="Screenshot 2026-09-28 141308" src="https://github.com/user-attachments/assets/23ced7bc-afd7-4382-9997-bc87632f1259" />
-<img width="941" height="326" alt="Screenshot 2026-09-28 141504" src="https://github.com/user-attachments/assets/9a17637d-89cc-4383-a6df-b81028f65821" />
+
 
 
 **✔ Monitor Alert**
@@ -290,6 +295,7 @@ You should see `alert-no-backup-writes` configured to fire when zero write trans
 
 ---
 
+
 ## 📘 What You Learn
 
 | Skill | Why It Matters |
@@ -303,7 +309,9 @@ You should see `alert-no-backup-writes` configured to fire when zero write trans
 | Azure Monitor alert rules | Detects silent backup failures before you need to restore |
 | Azure RBAC for data-plane access | Explains why control-plane rights alone don't grant access to blob data |
 
+
 ---
+
 
 ## 🔧 Troubleshooting
 
@@ -318,7 +326,9 @@ You should see `alert-no-backup-writes` configured to fire when zero write trans
 | `--include v` returns only one blob | Versioning is not enabled or the overwrite did not run | Verify Versioning is **Enabled** on the storage account, then re-run the upload with `--overwrite` |
 | `alert-no-backup-writes` shows **Fired** right after deployment | No write transactions have happened in the 24-hour window yet | Expected behavior. Upload a file and the alert will resolve once writes are detected |
 
+
 ---
+
 
 ## 🏁 Final Notes
 
