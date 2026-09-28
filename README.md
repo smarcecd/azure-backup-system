@@ -211,6 +211,9 @@ az storage blob list `
 
 You should see two entries for `test/backup_test.txt`: the current version and the previous one.
 
+<img width="800" height="142" alt="Screenshot 2026-09-28 142156" src="https://github.com/user-attachments/assets/c3922f5a-9472-4516-90f1-793d052d5d89" />
+
+
 ### 📝 Step 7 — Verification Checklist
 
 **✔ Resource group deployed**
