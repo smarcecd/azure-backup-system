@@ -217,9 +217,15 @@ You should see two entries for `test/backup_test.txt`: the current version and t
 
 Portal → Resource Groups → `rg-backup-[yourname]`
 
+<img width="719" height="335" alt="Screenshot 2026-09-28 134801" src="https://github.com/user-attachments/assets/2a79a049-317b-47dc-b60f-83c68d681372" />
+
+
 **✔ Storage Account and Versioning**
 
 Home → Storage accounts → `stbackupyourname` → Overview → Properties tab
+
+<img width="817" height="404" alt="Screenshot 2026-09-28 135154" src="https://github.com/user-attachments/assets/a940bfc8-4d3f-4373-819d-600bbaa32132" />
+
 
 | Setting | Expected Value | Why It Matters |
 |---|---|---|
@@ -228,9 +234,13 @@ Home → Storage accounts → `stbackupyourname` → Overview → Properties tab
 | Blob soft delete | Enabled (30 days) | Deleted files are recoverable for 30 days |
 | Minimum TLS version | Version 1.2 | Secure connections enforced |
 
+
 **✔ Lifecycle Policy**
 
 Home → Storage accounts → `stbackupyourname` → Data management → Lifecycle management
+
+<img width="869" height="340" alt="Screenshot 2026-09-28 140743" src="https://github.com/user-attachments/assets/7f5e6098-a293-47e5-9df6-30d465c6696a" /> 
+
 
 You should see the `backup-lifecycle` rule configured with:
 
@@ -239,9 +249,15 @@ You should see the `backup-lifecycle` rule configured with:
 - Delete after 365 days
 - Delete old versions after 30 days
 
+ <img width="472" height="356" alt="image" src="https://github.com/user-attachments/assets/030b4f53-573e-43bd-b97f-baf9f8783f86" />
+
+
 **✔ Storage Containers**
 
 Home → Storage accounts → `stbackupyourname` → Data storage → Containers
+
+<img width="947" height="254" alt="Screenshot 2026-09-28 140958" src="https://github.com/user-attachments/assets/3a04996a-6679-430f-8305-8834a345f6ae" />
+
 
 You should see four containers: `$logs` (auto-created by Azure for diagnostics), `application-files`, `database-exports`, and `documents`, all with **Private** access.
 
@@ -249,14 +265,28 @@ You should see four containers: `$logs` (auto-created by Azure for diagnostics),
 
 Home → Logic Apps → Status: **Enabled**
 
+<img width="941" height="274" alt="Screenshot 2026-09-28 141058" src="https://github.com/user-attachments/assets/569a1b28-5211-4e47-9782-d8998f530feb" />
+
 - Run history shows a successful test
+
+<img width="845" height="232" alt="Screenshot 2026-09-28 141152" src="https://github.com/user-attachments/assets/3e6a82bc-ea9e-4536-afe2-d4752be3a907" />
+  
 - Test email received in your inbox
+
+<img width="676" height="367" alt="Screenshot 2026-09-28 141308" src="https://github.com/user-attachments/assets/23ced7bc-afd7-4382-9997-bc87632f1259" />
+<img width="941" height="326" alt="Screenshot 2026-09-28 141504" src="https://github.com/user-attachments/assets/9a17637d-89cc-4383-a6df-b81028f65821" />
+
 
 **✔ Monitor Alert**
 
 Home → Monitor → Alerts → Alert rules
 
+<img width="941" height="326" alt="Screenshot 2026-09-28 141504" src="https://github.com/user-attachments/assets/7a7ec990-c571-4482-885a-1f7d2b654f68" />
+
 You should see `alert-no-backup-writes` configured to fire when zero write transactions occur in a 24-hour window. If no files have been uploaded yet, the alert may already show as **Fired**. This is expected behavior and confirms the alert is working correctly.
+
+<img width="943" height="257" alt="Screenshot 2026-09-28 141404" src="https://github.com/user-attachments/assets/4d99ff33-eacc-48dc-a2d2-6bd9abbcc09b" />
+
 
 ---
 
